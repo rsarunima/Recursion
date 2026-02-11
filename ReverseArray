@@ -1,0 +1,32 @@
+public class ReverseArray {
+
+	public static void main(String[] args) {
+		
+		int[] nums= {1,2,3,4,5};
+		
+		reverseArray(nums,0,nums.length-1);
+		
+		for(int n:nums) {
+			
+			System.out.print(n+" ");
+		}
+		
+	}
+
+	private static void reverseArray(int[] nums, int start, int end) {
+		
+		if(start>end) {
+			return; 
+			} 
+		
+		int temp=nums[start];
+		
+		nums[start]=nums[end];
+		
+		nums[end]=temp;
+		
+		reverseArray(nums,start+1,end-1);
+		
+	}
+
+}
