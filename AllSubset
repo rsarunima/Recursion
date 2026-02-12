@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+
+public class AllSubset {
+
+	public static void main(String[] args) {
+
+       int[] nums= {1,2,3};
+       
+       allSubset(nums,0,new ArrayList<>());
+
+	}
+
+	private static void allSubset(int[] nums, int index, ArrayList current) {
+		
+		
+		System.out.println(new ArrayList<>(current));
+		
+		for(int i=index;i<nums.length;i++) {
+			
+			current.add(nums[i]);
+			
+			allSubset(nums, i+1, current);
+			
+			current.remove(current.size()-1);
+			
+		}
+
