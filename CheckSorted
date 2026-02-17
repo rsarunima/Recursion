@@ -1,0 +1,29 @@
+public class CheckSorted {
+
+	public static void main(String[] args) {
+		
+		int[] nums= {10,2,4,6,8};
+		
+		boolean ans=checkSorted(nums,0);
+		
+		System.out.print(ans);
+		
+
+	}
+
+	private static boolean checkSorted(int[] nums,int index) {
+		
+		
+		if(index==nums.length-1) {
+			
+			return true;
+		}
+		if(nums[index]>nums[index+1])		
+		{
+		return false;
+		}
+		
+		return checkSorted(nums,index+1);
+	}
+
+}
